@@ -521,9 +521,6 @@ elif page == "💰 LTV & Revenue Intel":
                       hover_name="outlet_name",
                       labels={"monthly_revenue_inr":"Monthly Revenue (₹)","ltv_24m_inr":"24M LTV (₹)"})
 ```
-
-Just **remove the `trendline="ols"` line**. That's the only change needed. Save, commit, and redeploy — the LTV page will load fine.
-
 If you want to keep a trendline, add `statsmodels` to your `requirements.txt` file instead:
 ```
 statsmodels>=0.14.0
