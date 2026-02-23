@@ -517,10 +517,16 @@ elif page == "💰 LTV & Revenue Intel":
     with col_a:
         # LTV vs Monthly Revenue scatter
         fig_lmr = px.scatter(dff, x="monthly_revenue_inr", y="ltv_24m_inr",
-                              color="health_tier", color_discrete_map=COLOR_RISK,
-                              hover_name="outlet_name",
-                              trendline="ols",
-                              labels={"monthly_revenue_inr":"Monthly Revenue (₹)","ltv_24m_inr":"24M LTV (₹)"})
+                      color="health_tier", color_discrete_map=COLOR_RISK,
+                      hover_name="outlet_name",
+                      labels={"monthly_revenue_inr":"Monthly Revenue (₹)","ltv_24m_inr":"24M LTV (₹)"})
+```
+
+Just **remove the `trendline="ols"` line**. That's the only change needed. Save, commit, and redeploy — the LTV page will load fine.
+
+If you want to keep a trendline, add `statsmodels` to your `requirements.txt` file instead:
+```
+statsmodels>=0.14.0
         style_fig(fig_lmr, "Monthly Revenue vs 24M LTV (with Trend)", height=320)
         st.plotly_chart(fig_lmr, use_container_width=True)
 
