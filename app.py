@@ -520,10 +520,6 @@ elif page == "💰 LTV & Revenue Intel":
                       color="health_tier", color_discrete_map=COLOR_RISK,
                       hover_name="outlet_name",
                       labels={"monthly_revenue_inr":"Monthly Revenue (₹)","ltv_24m_inr":"24M LTV (₹)"})
-```
-If you want to keep a trendline, add `statsmodels` to your `requirements.txt` file instead:
-```
-statsmodels>=0.14.0
         style_fig(fig_lmr, "Monthly Revenue vs 24M LTV (with Trend)", height=320)
         st.plotly_chart(fig_lmr, use_container_width=True)
 
